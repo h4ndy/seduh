@@ -3,8 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class congregation extends Model
+class Congregation extends Model
 {
     //
+
+    use HasFactory;
+    protected $guarded = [
+        'id',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function groupCongregation()
+    {
+        return $this->belongsTo(GroupCongregation::class,'code','group_congregation_code');
+    }
+
 }

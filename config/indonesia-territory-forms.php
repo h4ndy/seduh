@@ -17,6 +17,19 @@ return [
     ],
 
     /**
+     * The label of the form fields
+     * Note : this form fields are used to get the label from the form
+     *        and then use it to get the label from the database
+     */
+    'forms_label' => [
+        'province' => 'Provinsi',
+        'city' => 'Kota',
+        'district' => 'Kecamatan',
+        'sub_district' => 'Kelurahan',
+        'postal_code' => 'Kode Pos',
+    ],
+
+    /**
      * The visibility of the form fields
      * Note : this form fields are used to show or hide
      *        the form fields, and we can't disable the province

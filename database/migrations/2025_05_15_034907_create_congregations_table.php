@@ -22,9 +22,11 @@ return new class extends Migration
             $table->unsignedBigInteger('district_id')->nullable();
             $table->unsignedBigInteger('subdistrict_id')->nullable();
             $table->unsignedBigInteger('postal_code')->nullable();
-            $table->string('phone');
-            $table->string('email')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('group_congregation_code')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->integer('sort')->default(0);
             $table->timestamps();
         });
     }

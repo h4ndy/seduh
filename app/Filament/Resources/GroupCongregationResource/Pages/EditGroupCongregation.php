@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\GroupCongregationResource\Pages;
 
-use App\Filament\Resources\UserResource;
+use App\Filament\Resources\GroupCongregationResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditUser extends EditRecord
+class EditGroupCongregation extends EditRecord
 {
-    protected static string $resource = UserResource::class;
+    protected static string $resource = GroupCongregationResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -16,7 +16,6 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
-
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
